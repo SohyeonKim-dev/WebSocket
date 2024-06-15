@@ -10,9 +10,6 @@ int main() {
         boost::asio::io_context ioservice; 
         ip::tcp::resolver resolver(ioservice);
         ip::tcp::socket socket(ioservice); 
-
-        // localhost, port number 8080으로 설정 
-        // auto const results = resolver.resolve("192.168.45.158", "8080");
         
         // 기존 IP address로 작성한 부분 수정, client 이미지 docker hub 재업로드 
         // https://hub.docker.com/r/sohyeonkimdev/websocket_kubernetes/tags 
