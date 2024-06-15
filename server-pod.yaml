@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: websocket-server-pod
+  labels:
+    app: websocket-server
+spec:
+  containers:
+  - name: websocket-server
+    image: sohyeonkimdev/websocket_docker:server
+    ports:
+    - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: websocket-server-service
+spec:
+  selector:
+    app: websocket-server
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: websocket-client-pod
+  labels:
+    app: websocket-client
+spec:
+  containers:
+  - name: websocket-client
+    image: sohyeonkimdev/websocket_kubernetes:client
+    env:
+    - name: SERVER_ADDRESS
+      value: "websocket-server-service"
+    - name: SERVER_PORT
+      value: "8080"
